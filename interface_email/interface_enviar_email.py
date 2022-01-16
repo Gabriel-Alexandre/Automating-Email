@@ -1,6 +1,6 @@
 import sys
 from email_class.email_class import EmailClass
-from interface import *
+from interface_email.interface import Ui_MainWindow
 from PyQt5.QtWidgets import QMainWindow, QApplication, QFileDialog
 
 
