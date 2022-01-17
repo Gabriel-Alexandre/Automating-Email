@@ -2,4 +2,5 @@ Teste/
 files_aux/
 build/
 dist/
+__pycache__/
 interface_enviar_email.spec
