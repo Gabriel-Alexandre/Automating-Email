@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Envia Email</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../icone.ico</normaloff>../icone.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="2" column="3">
