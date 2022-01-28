@@ -109,20 +109,8 @@ if __name__ == '__main__':
 '''
 - Proxímos passos:
 
-- Melhorar anexo do template.
-- Fazer melhoria para que funcione tanto no linux quanto no windows.
-- Revisão da V.1 do projeto.
-- Fazer um executável e testar.
-- Organizar estrutura de pastas do projeto.
-- Organizar respositório remoto.
-- Escrever readme.
-
--> Depois disso a V.1 do projeto vai está concluida, a partir daí é bom adicionar novas funcionalidades e melhorar
-o layout.
-
-- Adicionar função para enviar para vários emails.
-- Adicionar banco de dados para controle.
-- Melhorar layout.
-- Fazer com que cada envio de email trabalhe em uma thread.
-- Tentar adicionar uma navegação.
+- Adicionar a funcionalidade possibilitando manda para diferente emails e suas implicações.
+- Usar uma thread para cada email enviado.
+- Fazer a preparação usando o "requiriments.txt".
+- Escrever documentação, possibilitando execução no linux e no windows.
 '''
