@@ -110,7 +110,7 @@ if __name__ == '__main__':
 - Proxímos passos:
 
 - Adicionar a funcionalidade possibilitando manda para diferente emails e suas implicações.
-- Usar uma thread para cada email enviado.
+-> (Resolver problema de quando a lista de emails é adicionada, ele manda apenas para um email).
 - Fazer a preparação usando o "requiriments.txt".
 - Escrever documentação, possibilitando execução no linux e no windows.
 '''

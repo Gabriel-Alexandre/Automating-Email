@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>291</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,23 +19,50 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="3">
-     <widget class="QPushButton" name="btnDocumentos">
-      <property name="text">
-       <string>Carregar Documentos</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="2">
      <widget class="QLineEdit" name="inputAudio"/>
     </item>
-    <item row="3" column="2">
-     <widget class="QLineEdit" name="inputTemplate"/>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Assunto</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="inputAssunto"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLineEdit" name="inputDocumentos"/>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
       <property name="text">
        <string>Senha</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="4">
+     <widget class="QPushButton" name="btnEnviar">
+      <property name="text">
+       <string>Enviar</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="btnAudio">
+      <property name="text">
+       <string>Carregar Áudio</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="inputDe"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="inputEmail">
+      <property name="inputMethodHints">
+       <set>Qt::ImhEmailCharactersOnly</set>
       </property>
      </widget>
     </item>
@@ -46,28 +73,45 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
-     <widget class="QLineEdit" name="inputImagem"/>
-    </item>
-    <item row="2" column="2">
-     <widget class="QLineEdit" name="inputDocumentos"/>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="inputEmail"/>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>de</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="3">
      <widget class="QPushButton" name="btnImagem">
       <property name="text">
        <string>Carregar Imagem</string>
       </property>
      </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="btnPara">
+      <property name="text">
+       <string>Carregar Arquivo</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>de</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="inputSenha">
+      <property name="inputMethodHints">
+       <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
+      </property>
+      <property name="inputMask">
+       <string/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="inputTemplate"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="inputImagem"/>
     </item>
     <item row="0" column="0">
      <widget class="QLabel" name="label">
@@ -76,48 +120,32 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="inputPara"/>
-    </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="btnAudio">
-      <property name="text">
-       <string>Carregar Áudio</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="inputDe"/>
-    </item>
-    <item row="3" column="0">
+    <item row="4" column="0">
      <widget class="QLabel" name="label_4">
       <property name="text">
        <string>para</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="inputSenha"/>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="label_5">
+    <item row="2" column="3">
+     <widget class="QPushButton" name="btnDocumentos">
       <property name="text">
-       <string>Assunto</string>
+       <string>Carregar Documentos</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="0" colspan="4">
-     <widget class="QPushButton" name="btnEnviar">
+    <item row="4" column="1" colspan="2">
+     <widget class="QLineEdit" name="inputPara"/>
+    </item>
+    <item row="9" column="0" colspan="4">
+     <widget class="QLabel" name="resposta">
       <property name="text">
-       <string>Enviar</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
-    </item>
-    <item row="6" column="0" colspan="4">
-     <widget class="QLineEdit" name="resposta"/>
-    </item>
-    <item row="4" column="1" colspan="3">
-     <widget class="QLineEdit" name="inputAssunto"/>
     </item>
    </layout>
   </widget>

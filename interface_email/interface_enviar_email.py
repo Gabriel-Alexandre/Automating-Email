@@ -13,7 +13,9 @@ class Interface_Enviar_Email(QMainWindow, Ui_MainWindow):
         self.btnDocumentos.clicked.connect(self.anexar_documento)
         self.btnTemplate.clicked.connect(self.anexar_template)
         self.btnEnviar.clicked.connect(self.enviar)
+        self.btnPara.clicked.connect(self.anexar_emails_para)
         self.msg = EmailClass()
+        self.emails_para = []
 
     def name_input(self, name_path):
         name = ''
@@ -88,16 +90,59 @@ class Interface_Enviar_Email(QMainWindow, Ui_MainWindow):
         name = self.name_input(template)
         self.inputTemplate.setText(name)
 
+    def anexar_emails_para(self):
+        emails, _ = QFileDialog.getOpenFileNames(
+            self.centralwidget,
+            'Anexar Template',
+            '/home/Downloads/',
+        )
+
+        if len(emails) > 1:
+            self.inputPara.setText('Anexe apenas um arquivo!')
+            return
+
+        name_aux = emails[0].split(sep='/')
+        name = name_aux[-1]
+
+        if name[-3::] != 'txt':
+            self.inputPara.setText('Anexe um arquivo de texto!')
+            return
+
+        with open(emails[0], 'r') as arq:
+            email = arq.read()
+
+        aux = ''
+        email_aux = email.split(sep=',')
+        for c, v in enumerate(email_aux):
+            self.emails_para.append(v.strip().replace('\n', ''))
+            if c < len(email_aux) - 1:
+                aux += v + ' | '
+            else:
+                aux += v
+        self.inputPara.setText(aux)
+
+
     def enviar(self):
         self.msg.email = self.inputEmail.text()
         self.msg.senha = self.inputSenha.text()
-        try:
-            self.msg.enviar_email(self.inputDe.text(), self.inputPara.text(), self.inputAssunto.text())
-            self.resposta.setText('Enviado com sucesso!')
-        except Exception as e:
-            print(e)
-            self.resposta.setText('Erro ao enviar Email!')
-            return
+
+        if len(self.emails_para) < 0 or len(self.inputPara.text()) == 0:
+            try:
+                self.msg.enviar_email(self.inputDe.text(), self.inputPara.text(), self.inputAssunto.text())
+                self.resposta.setText('Email enviado com sucesso!')
+            except Exception as e:
+                print(e)
+                self.resposta.setText('Erro ao enviar Email!')
+                return
+        else:
+            for v in self.emails_para:
+                try:
+                    self.msg.enviar_email(self.inputDe.text(), v, self.inputAssunto.text())
+                    self.resposta.setText('Emails enviado com sucesso!')
+                except Exception as e:
+                    print(e)
+                    self.resposta.setText(f'Erro ao enviar para o email: {v}')
+                    return
 
 
 if __name__ == '__main__':
